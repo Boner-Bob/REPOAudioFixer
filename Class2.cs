@@ -136,6 +136,9 @@ public class AudioReworkTag : MonoBehaviour
         float directionFactor = Vector3.Dot(forward, toSource);
         directionFactor = Mathf.Clamp01((directionFactor + 1f) * 0.5f);
 
+        // Smooth curve instead of harsh drop
+        directionFactor = Mathf.Pow(directionFactor, 2f); // try 1.5–3
+
         float finalOcclusion = Mathf.Lerp(occlusion, 1f, 1f - directionFactor);
 
         // 🔊 Volume
