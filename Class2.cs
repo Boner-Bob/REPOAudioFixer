@@ -68,7 +68,7 @@ public class AudioRework : BaseUnityPlugin
     {
         if (source == null)
             return;
-        Logger.LogInfo("Attached to: " + source.name);
+        //Logger.LogInfo("Attached to: " + source.name);
 
         // Ignore 2D audio
         if (source.spatialBlend < 0.1f)
